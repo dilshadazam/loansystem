@@ -13,7 +13,7 @@ export const toggleLoanproviderStatus = async (req, res, next) => {
       },
       {
         where: {
-          loanproviderid: req.params.loanproviderId
+          loanproviderId: req.params.loanproviderId
         }
       });
     const result = await Loanprovider.update({
