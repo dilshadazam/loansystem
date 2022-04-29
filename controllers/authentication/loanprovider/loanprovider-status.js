@@ -9,7 +9,7 @@ export const toggleLoanproviderStatus = async (req, res, next) => {
   const { isLoanproviderActive} = req.body;
   try {
     await Loanprovider.findOne({
-      isLoanproviderActive: isLoanproviderActive,
+      isLoanproviderActive: isLoanproviderActive,   
       },
       {
         where: {
@@ -17,8 +17,7 @@ export const toggleLoanproviderStatus = async (req, res, next) => {
         }
       });
     const result = await Loanprovider.update({
-      isLoanproviderActive,
-   
+      isLoanproviderActive,   
     }, {
       where: {
         id: req.params.loanproviderId

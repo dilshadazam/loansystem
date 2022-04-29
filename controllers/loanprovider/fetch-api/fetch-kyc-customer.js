@@ -18,14 +18,14 @@ export const getSingleCustKycData = async (req, res, next) => {
       attributes: [ "f_name","l_name","company_name","email","gender", "contact_no","d_o_b","city","student","employee","self_employed","pan_no","adhar_no", "createdAt"],
       raw: true,
     });
-    //if data not found by customer unique number then this message will appeare
+    //If data not found by customer unique number then this message will appeare
     if (!req.data) {
       const error = new Error(`Data Not Found On enterned numbered: ${customerUniqueNo}`);
       error.statusCode = 422;
       throw error;
   }
     
-     //response in postman when data successfully inserted
+     //Response in postman when data successfully inserted
      res.status(200).json({
       message: `KYC Customer information by customer Unique No = ${customerUniqueNo}`,
       data,

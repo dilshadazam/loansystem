@@ -14,9 +14,14 @@ import {getSingleCustData} from "../controllers/loanprovider/fetch-api/fetch-sin
 //Here i am importing FetchCustomerBasic info  function into routing file for generate routes
 import {getCustomerKycInfo} from "../controllers/loanprovider/fetch-api/fetch-all-kyc-customer.js";
 //FETCH ALL LOAN TYPES
-import {getAllLoanTypes} from "../controllers/administrator/fetch-api/fetch-all-loantypes.js";
+import {getAllLoanTypes} from "../controllers/loanprovider/fetch-api/fetch-all-loantypes.js";
 //Here i am importing FetchCustomerKyc Completed info  function into routing file for generate routes
-import {getSingleCustKycData} from "../controllers/administrator/fetch-api/fetch-kyc-customer.js";
+import {getSingleCustKycData} from "../controllers/loanprovider/fetch-api/fetch-kyc-customer.js";
+
+
+//Here i am importing FetchCustomerBasic info  function into routing file for generate routes
+
+// import {getCustomerBasicInfo} from "../controllers/loanprovider/fetch-api/fetch-kyc-customer.js";
 
 //Here i am importing UpdateCustomerKyc in Customer Table  function into routing file for generate routes
 import{updateCustomerKyc} from "../controllers/loanprovider/update-api/cust-kyc-update.js";
@@ -59,5 +64,8 @@ router.put(
   updateCustomerKyc
 );
 
+
+//GET ALL basic information of  Customer
+// router.get("/fecthcustomerbasicinfo", isLoanprovider, getCustomerBasicInfo);
 
 export default router;

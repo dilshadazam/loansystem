@@ -12,6 +12,8 @@ export const getSingleCustData = async (req, res, next) => {
       attributes: [ "f_name","l_name","company_name","email","gender", "contact_no","d_o_b","city","student","employee","self_employed", "createdAt"],
       raw: true,
     });
+
+    
      //response in postman when data successfully inserted
     res.status(200).json({
       message: `Customer information by customer Unique No =${customerUniqueNo}`,

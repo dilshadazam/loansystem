@@ -7,6 +7,11 @@ export const getCustomerBasicInfo = async (req, res, next) => {
       attributes: ["customerUniqueNo", "f_name","l_name","company_name","email","gender", "contact_no","d_o_b","city","student","employee","self_employed", "createdAt"],
       raw: true,
     });
+    if (!req.customer) {
+      const error = new Error(`Data Not Found`);
+      error.statusCode = 422;
+      throw error;
+  }
      //response in postman when data successfully inserted
     res.status(200).json({
       message: "Fetched only those customer who have not taken any loan yet!",

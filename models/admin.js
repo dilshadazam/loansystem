@@ -3,7 +3,6 @@ import Sequelize from "sequelize";
 import sequelize from "../utilities/database.js";
 
 
-
 const Admin = sequelize.define("admin", {
   id: {
     type: Sequelize.INTEGER,

@@ -6,7 +6,7 @@ import {validationErrorHandler} from "../../../helpers/validation-error-handler.
 
 export const toggleCustomerStatus = async (req, res, next) => {
   validationErrorHandler(req, next);
-  const { isUserActive} = req.body;
+  const {isUserActive} = req.body;
   try {
     await Customer.findOne({
       isUserActive: isUserActive,

@@ -1,6 +1,10 @@
 import admin from "../../../models/admin.js";
+//helpers
+import { validationErrorHandler } from "../../../helpers/validation-error-handler.js";
+
 
 export const adminSignout = async (req, res, next) => {
+  validationErrorHandler(req, next);
   try {
     const result = await admin.update(
       {

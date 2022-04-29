@@ -1,6 +1,10 @@
 import loanprovider from "../../../models/loanprovider.js";
+//helpers
+import { validationErrorHandler } from "../../../helpers/validation-error-handler.js";
+
 
 export const loanproviderSignout = async (req, res, next) => {
+  validationErrorHandler(req, next);
 
   try {
     const result = await loanprovider.update({
